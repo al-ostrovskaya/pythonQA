@@ -6,9 +6,6 @@ try:
     link = "http://suninjuly.github.io/registration2.html"
     browser = webdriver.Chrome()
     browser.get(link)
-
-    # Ваш код, который заполняет обязательные поля
-
     input1 = browser.find_element(By.XPATH, "//input[@class='form-control first' and @required='']")
     input1.send_keys("Test")
     input2 = browser.find_element(By.XPATH, "//input[@class='form-control second' and @required='']")
@@ -17,7 +14,6 @@ try:
     input3.send_keys("Test")
     button = browser.find_element(By.XPATH, "//button[@type='submit']").click()
     time.sleep(5)
-
 
     # Отправляем заполненную форму
     button = browser.find_element(By.CSS_SELECTOR, "button.btn")
