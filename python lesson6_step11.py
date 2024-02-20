@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 
 try:
-    link = "http://suninjuly.github.io/registration2.html"
+    link = "http://suninjuly.github.io/registration1.html"
     browser = webdriver.Chrome()
     browser.get(link)
     input1 = browser.find_element(By.XPATH, "//input[@class='form-control first' and @required='']")
@@ -12,7 +12,6 @@ try:
     input2.send_keys("Test")
     input3 = browser.find_element(By.XPATH, "//input[@class='form-control third' and @required='']")
     input3.send_keys("Test")
-    button = browser.find_element(By.XPATH, "//button[@type='submit']").click()
     time.sleep(5)
 
     # Отправляем заполненную форму
