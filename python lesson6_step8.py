@@ -16,7 +16,11 @@ def version1():
     input4 = browser.find_element(By.ID, "country")
     input4.send_keys("Russia")
     button = browser.find_element(By.XPATH, "//button[@type='submit']").click()
-    time.sleep(5)
+    time.sleep(2)
+    alert = browser.switch_to.alert
+    alert_text = alert.text
+    alert.accept()
+    print(alert_text)
 
 def version2():
     input1 = browser.find_element(By.TAG_NAME, "input")
@@ -28,12 +32,19 @@ def version2():
     input4 = browser.find_element(By.ID, "country")
     input4.send_keys("Russia")
     button = browser.find_element(By.XPATH, "/html/body/div/form/div[6]/button[3]").click()
-    time.sleep(5)
+    time.sleep(2)
+    alert = browser.switch_to.alert
+    alert_text2 = alert.text
+    alert.accept()
+    print(alert_text2)
 
 try:
     browser = webdriver.Chrome()
     browser.get(link)
+    version1()
     version2()
+
+
 
 finally:
     # закрываем браузер после всех манипуляций
